@@ -3,6 +3,8 @@ import matplotlib.pyplot as plt
 
 if __name__ == '__main__':
     data = load_data()
+    print(len(data['xyt'][0]))
+    print((data['label'][0]))
     '''
     # init visualize trace
     for i in range(len(data['xyt'])):
