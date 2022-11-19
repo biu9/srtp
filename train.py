@@ -60,7 +60,10 @@ def train():
             loss = loss_func(output,torch.tensor(train_label[i]).to(DEVICE))
             loss.backward()
             optimizer.step()
-            #print('epoch:{},loss:{}'.format(epoch,loss))
+            print('epoch:{},loss:{}'.format(epoch,loss))
+            plt.plot(i,loss.item(),'r.')
+        plt.show()
+        plt.savefig('./result/train_loss/epoch_{}.png'.format(epoch))
     
     # 测试
     correct = 0
